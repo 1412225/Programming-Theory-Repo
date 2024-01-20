@@ -1223,6 +1223,7 @@ MonoBehaviour:
   - {fileID: 2163684339172792278, guid: 649776c547e8a3a4e8d20b5f55affa61, type: 3}
   - {fileID: 884642242820542645, guid: af76a7c0549f84a4a97f550a868111f7, type: 3}
   playerPrefab: {fileID: 1298723838769660917, guid: 1d374172c7d97f84489aa727f7107316, type: 3}
+  livesText: {fileID: 1506024450}
 --- !u!4 &1856826876
 Transform:
   m_ObjectHideFlags: 0
