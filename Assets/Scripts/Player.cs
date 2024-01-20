@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -22,8 +23,11 @@ public class Player : MonoBehaviour
         Move();
 
         Jump();
+
+        Die();
     }
 
+    //ABSTRACTION
     private void Move()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -43,6 +47,21 @@ public class Player : MonoBehaviour
         }
     }
 
+    void Die()
+    {
+        if (transform.position.y < -5)
+        {
+            if (GameManager.lives > 0)
+            {
+                GameManager.lives--;
+                transform.position = new Vector3(0, 5, 0);
+            }
+            else
+            {
+                GameManager.gameOver = true;
+            }
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Floor"))
@@ -50,4 +69,5 @@ public class Player : MonoBehaviour
             canJump = true;
         }
     }
+
 }

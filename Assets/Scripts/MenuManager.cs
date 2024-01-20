@@ -10,7 +10,7 @@ using UnityEditor;
 public class MenuManager : MonoBehaviour
 {
     public static MenuManager Instance;
-    public string playerName { get; private set; }
+    public string playerName { get; private set; } // ENCAPSULATION
     [SerializeField] private TMP_InputField nameField;
     [SerializeField] private TextMeshProUGUI nameError;
 
